@@ -1,0 +1,174 @@
+/**
+ * Tailwind styles
+ */
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+
+  @font-face {
+    font-family: 'Inter Hewn Bold';
+    font-display: auto;
+    font-weight: 700;
+    font-style: normal;
+    src: url('/assets/fonts/sans/Inter-Hewn-Bold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-display: auto;
+    font-weight: 100 900;
+    font-style: oblique 0deg 10deg;
+    font-optical-sizing: auto;
+    src: url('/assets/fonts/sans/Inter.woff2') format('woff2');
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  the-app { @apply block; }
+  /* the-controls {} */
+  the-source { @apply hidden font-doc-sans font-light leading-relaxed; }
+  the-preview { @apply block font-doc-sans font-light leading-relaxed; }
+
+}
+
+
+
+/*
+@layer components {}
+*/
+
+
+
+@layer utilities {
+
+  .page-ornament-top {
+    page: ornamentTop;
+  }
+
+  .page-ornament-bottom {
+    page: ornamentBottom;
+  }
+
+  .page-payment-methods {
+    page: paymentMethods;
+  }
+
+  .break-before-page {
+    break-before: page
+  }
+
+  .break-after-page {
+    break-after: page
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+
+  .oblique {
+    font-variation-settings: 'slnt' -10;
+  }
+
+}
+
+
+
+
+
+
+/**
+ * Print styles 
+ * 
+ * NB: These styles do not work well in tw layer directives while developing:
+ * `element` and `running declarations are sometimes lost when other modules change.
+ */
+
+
+
+@page {
+
+  size: A4;
+  margin: 31.6mm 20mm;
+
+  background-image: 
+    url("/assets/img/page-ornament-top.svg"),
+    url("/assets/img/page-ornament-bottom.svg");
+  background-position: 
+    top left,
+    bottom left;
+  background-size: 
+    100% var(--pagedjs-margin-top),
+    100% var(--pagedjs-margin-bottom);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+
+  @top-left-corner { content: element(topLeftCorner) }
+  @top-left { content: element(topLeft) }
+
+  /*
+  @top-center {}
+  @top-right {}
+  @top-right-corner {}
+  @left-top {}
+  @left-middle {}
+  @left-bottom {}
+  @right-top {}
+  @right-middle {}
+  @right-bottom {}
+  @bottom-left-corner {}
+  @bottom-left {}
+  @bottom-center {}
+  @bottom-right {}
+  @bottom-right-corner {} 
+  */
+
+}
+
+
+@page ornamentTop {
+  background-image: url("/assets/img/page-ornament-top.svg");
+  background-position: top left;
+  background-size: 100% var(--pagedjs-margin-top);
+}
+
+
+
+@page ornamentBottom {
+  background-image: url("/assets/img/page-ornament-bottom.svg");
+  background-position: bottom left;
+  background-size: 100% var(--pagedjs-margin-bottom);
+}
+
+
+
+@page paymentMethods {
+  background-image: 
+    url("/assets/img/page-ornament-top.svg"),
+    url("/assets/img/page-ornament-bottom.svg"),
+    url("/sample-data/qr-bill.svg");
+  background-position:
+    top left,
+    bottom 105mm left,
+    bottom left;
+  background-size: 
+    100% var(--pagedjs-margin-top),
+    100% var(--pagedjs-margin-bottom),
+    210mm 105mm; /* qr-bill dimensions */
+}
+
+
+
+.top-left-corner { position: running(topLeftCorner) }
+.top-left { position: running(topLeft) }

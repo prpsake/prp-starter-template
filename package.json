@@ -1,0 +1,33 @@
+{
+  "name": "starter-template",
+  "version": "0.1.0",
+  "description": "Starter for a PRP document template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prpsake/starter-template.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "TAILWIND_DISABLE_TOUCH=true snowpack dev",
+    "start:clean": "TAILWIND_DISABLE_TOUCH=true snowpack dev --reload",
+    "build": "TAILWIND_DISABLE_TOUCH=true snowpack build"
+  },
+  "author": "gourmetseasoningsake",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/prpsake/starter-template/issues"
+  },
+  "homepage": "https://github.com/prpsake/starter-template#readme",
+  "devDependencies": {
+    "@ampire/snowpack-plugin-plugin": "^0.2.0",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "snowpack": "^3.6.2",
+    "tailwindcss": "^2.2.0-canary.9"
+  },
+  "dependencies": {
+    "hybrids": "^5.4.0"
+  }
+}

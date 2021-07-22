@@ -1,4 +1,4 @@
-import { store, property, html } from 'hybrids'
+import { property, html } from 'hybrids'
 import { notEmptyArray } from './helpers'
 
 

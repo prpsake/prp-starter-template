@@ -5,7 +5,7 @@ import { Previewer } from './lib/paged.esm.js'
 
 /* Models */
 
-import Invoice from './models/invoice'
+import Model from './models/invoice'
 
 
 
@@ -27,7 +27,7 @@ const paginate =
 /* Elements */
 
 const TheApp = {
-  data: store(Invoice),
+  data: store(Model),
   source: ({ content }) => content().querySelector('the-source').innerHTML,
   content: ({ data }) => html`
 
@@ -36,7 +36,7 @@ const TheApp = {
     `}
 
     ${store.ready(data) && html`
-      <the-source></the-source>
+      <the-source data=${data}></the-source>
       <the-preview></the-preview> 
     `}
 
@@ -56,7 +56,8 @@ const ThePreview = {
       paginate(h.app.source, h)
       .then(x => console.log(x.total))
       .catch(e => html`pagination failed. ${e.message}`),
-      html`awaiting pages...`
+      html`awaiting pages...`,
+      1000
     )}
   `
 }

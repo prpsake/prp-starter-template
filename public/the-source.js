@@ -1,9 +1,5 @@
-import { store, html } from 'hybrids'
+import { store, property, html } from 'hybrids'
 import { notEmptyArray } from './helpers'
-
-
-
-import Model from './models/invoice'
 
 
 
@@ -18,7 +14,7 @@ import { textStrong, label, labelWeak } from './types/text'
 
 
 export default {
-  data: store(Model),
+  data: property({}),
   content: ({ data: { contents } }) => html`
 
     <h1 class="mt-8 mb-16">

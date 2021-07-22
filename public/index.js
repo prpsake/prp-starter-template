@@ -28,15 +28,16 @@ const paginate =
 
 const TheApp = {
   data: store(Model),
+  readyPreview: false,
   source: ({ content }) => content().querySelector('the-source').innerHTML,
-  content: ({ data }) => html`
+  content: ({ data, readyPreview }) => html`
 
     ${store.pending(data) && html`
       awaiting data...
     `}
 
     ${store.ready(data) && html`
-      <the-source data=${data}></the-source>
+      <the-source data=${data} hidden=${readyPreview}></the-source>
       <the-preview></the-preview> 
     `}
 
@@ -55,7 +56,8 @@ const ThePreview = {
     ${html.resolve(
       paginate(h.app.source, h)
       .then(x => console.log(x.total))
-      .catch(e => html`pagination failed. ${e.message}`),
+      .catch(e => html`error while paginating: ${e.message}`)
+      .finally(() => (h.app.readyPreview = true)),
       html`awaiting pages...`,
       1000
     )}

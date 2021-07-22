@@ -35,7 +35,10 @@
 
   the-app { @apply block; }
   /* the-controls {} */
-  the-source { @apply hidden font-doc-sans font-light leading-relaxed; }
+  /* 
+  NB: styles are declared in index.html 
+  the-source { @apply invisible h-0 w-0 overflow-hidden; } 
+  */
   the-preview { @apply block font-doc-sans font-light leading-relaxed; }
 
 }
@@ -45,7 +48,6 @@
 /*
 @layer components {}
 */
-
 
 
 @layer utilities {

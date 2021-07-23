@@ -15,6 +15,9 @@ module.exports = {
   devOptions: {
     open: 'none'
   },
+  buildOptions: {
+    out: 'dist'
+  },
   plugins: [
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-postcss',

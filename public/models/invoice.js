@@ -48,7 +48,7 @@ export default {
   [store.connect] : {
     get: 
       () => 
-      fetch('./sample-data/invoice.json')
+      fetch(`${window.location}data`)
       .then(resp => resp.json())
       .then(data => data),
   },

@@ -31,4 +31,7 @@ module.exports = {
       }
     }]
   ],
+  routes: [
+    { src: '/data', dest: '/sample-data/invoice.json' }
+  ]
 }

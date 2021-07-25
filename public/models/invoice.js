@@ -48,8 +48,9 @@ export default {
   [store.connect] : {
     get: 
       () => 
-      fetch(`${window.location}data`)
+      fetch('./data')
       .then(resp => resp.json())
-      .then(data => data),
+      .then(data => data)
+      .catch(e => console.log(e)),
   },
 }

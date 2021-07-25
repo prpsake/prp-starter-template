@@ -33,5 +33,10 @@ module.exports = {
   ],
   routes: [
     { src: '/data', dest: '/sample-data/invoice.json' }
-  ]
+  ],
+  optimize: {
+    bundle: true,
+    minify: true,
+    target: 'es2018',
+  },
 }

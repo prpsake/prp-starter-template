@@ -42,7 +42,7 @@ const TheApp = {
     `}
 
     ${store.error(data) && html`
-      data error.
+      data error
     `}
   `
 }

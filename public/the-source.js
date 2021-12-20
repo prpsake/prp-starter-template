@@ -1,22 +1,32 @@
-import { property, html } from 'hybrids'
-import { notEmptyArray } from './helpers'
+import { define, html } from "hybrids"
+import { notEmptyArray } from "./helpers"
 
 
 
-import address from './types/address'
-import additionGroup from './types/addition-group'
-import lineItem from './types/line-item'
+import address from "./types/address"
+import additionGroup from "./types/addition-group"
+import lineItem from "./types/line-item"
 
 
 
-import { textStrong, label, labelWeak } from './types/text'
+import { textStrong, label, labelWeak } from "./types/text"
+
+
+import AQRBill from "@prpsake/prp-qr-bill"
+import { showWith, notShowWith } from "@prpsake/prp-qr-bill/Helpers"
+import * as Parser from "@prpsake/prp-qr-bill/Parser"
+import * as Validator from "@prpsake/prp-qr-bill/Validator"
+import * as Data from "@prpsake/prp-qr-bill/Data"
+import * as Formatter from "@prpsake/prp-qr-bill/Formatter"
 
 
 
 export default {
-  data: property({}),
-  content: ({ data: { contents } }) => html`
-
+  tag: 'the-source',
+  data: {
+    set: (_, data) => data
+  },
+  render: ({ data: { contents } }) => html`
     <h1 class="mt-8 mb-16">
       <span class="font-doc-sans-heading text-4xl text-brand">${contents.title} </span>
       <span class="font-doc-sans text-3xl">${contents.identifier}</span>
@@ -98,15 +108,41 @@ export default {
     </div>
     
     <div class="page-payment-methods">
-      <h2 class="mt-8 mb-28 font-doc-sans-heading text-3xl text-brand">
-        Zahlungsmethoden
-      </h2>
-      <div class="grid grid-cols-6">
-        <img class="block mb-28" src="/assets/img/twint-qr-code-free-amount.svg">
-        <div class="col-span-5 mb-28"></div>
-        <img class="block col-span-1" src="/assets/img/paypal-qr-code-free-amount.svg">
-        <div class="col-span-5"></div>
+      <div class="mx-pagedjs">
+        <h2 class="mt-8 mb-28 font-doc-sans-heading text-3xl text-brand">
+          Zahlungsmethoden
+        </h2>
+        <div class="grid grid-cols-12">
+          <img class="block col-span-3 mb-28" src="/assets/img/twint-qr-code-free-amount.svg">
+          <div class="col-span-6 mb-28"></div>
+          <img class="block col-span-3" src="/assets/img/paypal-qr-code-free-amount.svg">
+        </div>
       </div>
+      <a-qr-bill
+        lang=${"de"}
+        currency=${contents.currency.code}
+        amount=${Formatter.moneyFromNumberStr2(String(contents.total))}
+        iban=${Formatter.blockStr4(contents.iban)}
+        reference=${""}
+        message=${""}
+        messageCode=${""}
+        creditorName=${contents.address.name}
+        creditorAddressLine1=${contents.address.street}
+        creditorAddressLine2=${contents.address.locality}
+        debtorName=${""}
+        debtorAddressLine1=${""}
+        debtorAddressLine2=${""}
+        qrCodeString=${""}
+        showQRCode=${false}
+        showAmount=${true}
+        showReference=${false}
+        showDebtor=${false}
+        showAdditionalInfo=${false}
+        reduceContent=${false}>
+      </a-qr-bill>
     </div>
   `
 }
+
+
+define(AQRBill)

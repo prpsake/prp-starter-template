@@ -41,6 +41,28 @@
   */
   the-preview { @apply block font-doc-sans font-light leading-relaxed; }
 
+  /* AQRBill start: */
+  @font-face {
+    font-family: LiberationSans;
+    src: url('/assets/fonts/sans/LiberationSans-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: LiberationSans;
+    src: url('/assets/fonts/sans/LiberationSans-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  a-qr-bill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  /* :end AQRBill */
+
 }
 
 
@@ -78,6 +100,11 @@
 
   .oblique {
     font-variation-settings: 'slnt' -10;
+  }
+
+  .mx-pagedjs {
+    margin-left: 20mm;
+    margin-right: 20mm;
   }
 
 }
@@ -156,18 +183,17 @@
 
 
 @page paymentMethods {
+  position: relative;
+  margin: 31.6mm 0 0;
   background-image: 
     url("/assets/img/page-ornament-top.svg"),
-    url("/assets/img/page-ornament-bottom.svg"),
-    url("/sample-data/qr-bill.svg");
+    url("/assets/img/page-ornament-bottom.svg");
   background-position:
     top left,
-    bottom 105mm left,
-    bottom left;
+    bottom 105mm left;
   background-size: 
     100% var(--pagedjs-margin-top),
-    100% var(--pagedjs-margin-bottom),
-    210mm 105mm; /* qr-bill dimensions */
+    100% var(--pagedjs-margin-top); /* NB: bottom margin is 0 */
 }
 
 

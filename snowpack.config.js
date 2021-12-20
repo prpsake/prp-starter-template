@@ -1,5 +1,6 @@
 // https://www.snowpack.dev/reference/configuration
 
+// snowpack.config.mjs
 
 
 const { theme } = require('./tailwind.config')
@@ -13,7 +14,7 @@ module.exports = {
     lib: { url: '/lib'},
   },
   devOptions: {
-    open: 'none'
+    open: 'none',
   },
   buildOptions: {
     out: 'dist'
@@ -21,7 +22,7 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-postcss',
-    ['@ampire/snowpack-plugin-plugin', {
+    ['@gourmetseasoningsake/snowpack-plugin-plugin', {
       input: ['.svg'],
       output: ['.svg'],
       transform: ({ contents, fileExt }) => {
@@ -29,7 +30,7 @@ module.exports = {
           return contents.replace('__COLOR_BRAND__', theme.colors.brand)
         }
       }
-    }]
+    }],
   ],
   routes: [
     { src: '/data', dest: '/sample-data/invoice.json' }

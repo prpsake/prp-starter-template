@@ -16,7 +16,7 @@ export default {
     address: {
       country: {
         name: 'Schweiz',
-        full_name: 'Schweizerische Eidgenossenschaft',
+        fullName: 'Schweizerische Eidgenossenschaft',
         code: 'CH',
         codes: [
           { context: 'CROOKS 3166-1',
@@ -35,29 +35,29 @@ export default {
       },
       region: {
         name: 'Zürich',
-        full_name: 'Zürich',
+        fullName: 'Zürich',
         code: 'ZH',
         codes: [],
       },
       postcode: '8152',
       locality: 'Opfikon',
       street: 'Grätzlistrasse',
-      plot: '3',
+      streetNumber: '3',
       name: 'Jérôme Imfeld',
       person: {
         uid: '1',
         salutation: 'Herr',
-        first_name: 'Jérôme',
-        last_name: 'Imfeld',
+        firstName: 'Jérôme',
+        lastName: 'Imfeld',
         email: 'j@zolo.dev',
         mobile: '0796140319',
         phone: '',
       },
     },
-    billing_address: {
+    billingAddress: {
       country: {
         name: 'Schweiz',
-        full_name: 'Schweizerische Eidgenossenschaft',
+        fullName: 'Schweizerische Eidgenossenschaft',
         code: 'CH',
         codes: [
           { context: 'CROOKS 3166-1',
@@ -76,29 +76,29 @@ export default {
       },
       region: {
         name: 'Bern',
-        full_name: 'Bern',
+        fullName: 'Bern',
         code: 'BE',
         codes: [],
       },
       postcode: '3000',
       locality: 'Bern',
       street: 'Thunerstrasse',
-      plot: '17a',
+      streetNumber: '17a',
       name: 'Berner GmbH',
       person: {
         uid: '1',
         salutation: 'Herr',
-        first_name: 'Max',
-        last_name: 'Berner',
+        firstName: 'Max',
+        lastName: 'Berner',
         email: '',
         mobile: '',
         phone: '',
       },
     },
-    shipping_address: {
+    shippingAddress: {
       country: {
         name: 'Schweiz',
-        full_name: 'Schweizerische Eidgenossenschaft',
+        fullName: 'Schweizerische Eidgenossenschaft',
         code: 'CH',
         codes: [
           { context: 'CROOKS 3166-1',
@@ -117,20 +117,20 @@ export default {
       },
       region: {
         name: 'Bern',
-        full_name: 'Bern',
+        fullName: 'Bern',
         code: 'BE',
         codes: [],
       },
       postcode: '3000',
       locality: 'Bern',
       street: 'Thunerstrasse',
-      plot: '17a',
+      streetNumber: '17a',
       name: 'Berner GmbH',
       person: {
         uid: '1',
         salutation: 'Herr',
-        first_name: 'Max',
-        last_name: 'Berner',
+        firstName: 'Max',
+        lastName: 'Berner',
         email: '',
         mobile: '',
         phone: '',
@@ -141,12 +141,12 @@ export default {
       locator: 'https://zolo.dev',
     },
     date: '10.07.21',
-    due_date: '19.07.21',
+    dueDate: '19.07.21',
     iban: 'CH83 0900 0000 8773 8635 0',
     currency: {
       name: 'Franken',
-      full_name: 'Schweizer Franken',
-      atomic_name: 'Rappen',
+      fullName: 'Schweizer Franken',
+      atomicName: 'Rappen',
       precision: 2,
       code: 'CHF',
       codes: [
@@ -160,7 +160,7 @@ export default {
         }
       ]
     },
-    line_items: [
+    lineItems: [
       { title: 'Bananas',
         desc: 'Yummie in my tummy.',
         issues: [
@@ -173,7 +173,7 @@ export default {
         rate: 90,
         unit: 'Std.',
         subtotal: 450,
-        addition_groups: [
+        additionGroups: [
           { items: [
               { uid: 'MWSTXYZ', /* hash all props but qty and total */
                 type: 'inclusion',
@@ -182,18 +182,18 @@ export default {
                 nth: 'n',
                 percentage: 7.7,
                 fixed: 0,
-                max_qty: 1,
-                min_amount: 0,
-                max_amount: false,
+                maxQty: 1,
+                minAmount: 0,
+                maxAmount: false,
                 qty: 1,
                 total: 34.65,
               },
             ],
-            inclusion_total: 34.65,
-            deduction_total: 0,
-            addition_total: 0,
-            group_total: 0,  /* derived: 0 (addition_total) - 0 (deduction_total) */
-            subtotal: 450, /* derived: 450 (item.subtotal) + 0 (group_total) */
+            inclusionTotal: 34.65,
+            deductionTotal: 0,
+            additionTotal: 0,
+            groupTotal: 0,  /* derived: 0 (additionTotal) - 0 (deductionTotal) */
+            subtotal: 450, /* derived: 450 (item.subtotal) + 0 (groupTotal) */
           },
           { items: [
               { uid: 'XYZ',
@@ -203,18 +203,18 @@ export default {
                 nth: '2',
                 percentage: 0,
                 fixed: 15,
-                max_qty: 4,
-                min_amount: 0,
-                max_amount: 60,
+                maxQty: 4,
+                minAmount: 0,
+                maxAmount: 60,
                 qty: 4,
                 total: 60
               }
             ],
-            inclusion_total: 0,
-            deduction_total: 60,
-            addition_total: 0,
-            group_total: -60,  /* derived: 0 (addition_total) - 60 (deduction_total) */
-            subtotal: 390, /* derived: 450 (item.subtotal) + -60 (group_total) */
+            inclusionTotal: 0,
+            deductionTotal: 60,
+            additionTotal: 0,
+            groupTotal: -60,  /* derived: 0 (additionTotal) - 60 (deductionTotal) */
+            subtotal: 390, /* derived: 450 (item.subtotal) + -60 (groupTotal) */
           },
         ],
         total: 390 /* derived: (last subtotal) */
@@ -231,7 +231,7 @@ export default {
         rate: 90,
         unit: 'Std.',
         subtotal: 270,
-        addition_groups: [
+        additionGroups: [
           { items: [
               { uid: 'MWSTXYZ',
                 type: 'inclusion',
@@ -240,18 +240,18 @@ export default {
                 nth: 'n',
                 percentage: 7.7,
                 fixed: 0,
-                max_qty: 1,
-                min_amount: 0,
-                max_amount: false,
+                maxQty: 1,
+                minAmount: 0,
+                maxAmount: false,
                 qty: 1,
                 total: 20.79,
               },
             ],
-            inclusion_total: 20.79,
-            deduction_total: 0,
-            addition_total: 0,
-            group_total: 0,  /* derived: 0 (addition_total) - 0 (deduction_total) */
-            subtotal: 270, /* derived: 270 (item.subtotal) + 0 (group_total) */
+            inclusionTotal: 20.79,
+            deductionTotal: 0,
+            additionTotal: 0,
+            groupTotal: 0,  /* derived: 0 (additionTotal) - 0 (deductionTotal) */
+            subtotal: 270, /* derived: 270 (item.subtotal) + 0 (groupTotal) */
           },
           { items: [
               { uid: 'C02EMIS',
@@ -261,18 +261,18 @@ export default {
                 nth: 'n',
                 percentage: 2.5,
                 fixed: 0,
-                max_qty: 1,
-                min_amount: 5,
-                max_amount: 10,
+                maxQty: 1,
+                minAmount: 5,
+                maxAmount: 10,
                 qty: 1,
                 total: 6.75,
               }
             ],
-            inclusion_total: 0,
-            deduction_total: 0,
-            addition_total: 6.75,
-            group_total: 6.75,  /* derived: 6.75 (addition_total) - 0 (deduction_total) */
-            subtotal: 276.75, /* derived: 270 (item.subtotal) + 6.75 (group_total) */
+            inclusionTotal: 0,
+            deductionTotal: 0,
+            additionTotal: 6.75,
+            groupTotal: 6.75,  /* derived: 6.75 (additionTotal) - 0 (deductionTotal) */
+            subtotal: 276.75, /* derived: 270 (item.subtotal) + 6.75 (groupTotal) */
           },
         ],
         total: 276.75 /* derived: (last subtotal) */
@@ -297,7 +297,7 @@ export default {
         rate: 90,
         unit: 'Std.',
         subtotal: 900,
-        addition_groups: [
+        additionGroups: [
           { items: [
               { uid: 'MWSTXYZ',
                 type: 'inclusion',
@@ -306,18 +306,18 @@ export default {
                 nth: 'n',
                 percentage: 7.7,
                 fixed: 0,
-                max_qty: 1,
-                min_amount: 0,
-                max_amount: false,
+                maxQty: 1,
+                minAmount: 0,
+                maxAmount: false,
                 qty: 1,
                 total: 69.3,
               },
             ],
-            inclusion_total: 69.3,
-            deduction_total: 0,
-            addition_total: 0,
-            group_total: 0,  /* derived: 0 (addition_total) - 0 (deduction_total) */
-            subtotal: 900, /* derived: 900 (item.subtotal) + 0 (group_total) */
+            inclusionTotal: 69.3,
+            deductionTotal: 0,
+            additionTotal: 0,
+            groupTotal: 0,  /* derived: 0 (additionTotal) - 0 (deductionTotal) */
+            subtotal: 900, /* derived: 900 (item.subtotal) + 0 (groupTotal) */
           },
           { items: [
               { uid: 'ABC',
@@ -327,25 +327,25 @@ export default {
                 nth: 'n',
                 percentage: 10,
                 fixed: 0,
-                max_qty: 1,
-                min_amount: 0,
-                max_amount: 50,
+                maxQty: 1,
+                minAmount: 0,
+                maxAmount: 50,
                 qty: 1,
                 total: 50 /* derived: 900 * 0.1 = 90 > 50 => 50 */
               }
             ],
-            inclusion_total: 0,
-            deduction_total: 50,
-            addition_total: 0,
-            group_total: -50,  /* derived: 6.75 (addition_total) - 50 (deduction_total) */
-            subtotal: 850, /* derived: 900 (item.subtotal) + -50 (group_total) */
+            inclusionTotal: 0,
+            deductionTotal: 50,
+            additionTotal: 0,
+            groupTotal: -50,  /* derived: 6.75 (additionTotal) - 50 (deductionTotal) */
+            subtotal: 850, /* derived: 900 (item.subtotal) + -50 (groupTotal) */
           },
         ],
         total: 850 /* derived: (last subtotal) */
       }
     ],
     subtotal: 1620,
-    line_item_addition_total_groups: [
+    lineItemAdditionTotalGroups: [
       /* derived: sums of additions in items with same uid */
       /* QUESTION: Embed ref props */
       { items: [
@@ -355,11 +355,11 @@ export default {
             total: 124.74,
           },
         ],
-        inclusion_total: 124.74,
-        deduction_total: 0,
-        addition_total: 0,
-        group_total: 0, /* derived: 0 (addition_total) - 0 (deduction_total) */
-        subtotal: 1620 /* derived: 1620 (prev subtotal) + 0 (group_total) */
+        inclusionTotal: 124.74,
+        deductionTotal: 0,
+        additionTotal: 0,
+        groupTotal: 0, /* derived: 0 (additionTotal) - 0 (deductionTotal) */
+        subtotal: 1620 /* derived: 1620 (prev subtotal) + 0 (groupTotal) */
       },
       { items: [
           { ruid: 'XYZ',
@@ -378,15 +378,15 @@ export default {
             total: 6.75,
           },
         ],
-        inclusion_total: 0,
-        deduction_total: 110,
-        addition_total: 6.75,
-        group_total: -103.25, /* derived: 6.75 (addition_total) - 110 (deduction_total) */
-        subtotal: 1516.75 /* derived: 1620 (prev subtotal) + -103.25 (group_total) */
+        inclusionTotal: 0,
+        deductionTotal: 110,
+        additionTotal: 6.75,
+        groupTotal: -103.25, /* derived: 6.75 (additionTotal) - 110 (deductionTotal) */
+        subtotal: 1516.75 /* derived: 1620 (prev subtotal) + -103.25 (groupTotal) */
       },
     ],
-    /* further addition_groups */
-    addition_groups: [
+    /* further additionGroups */
+    additionGroups: [
       { items: [
           { uid: 'JDILTRI',
             type: 'addition',
@@ -395,22 +395,22 @@ export default {
             nth: 'n',
             percentage: 10,
             fixed: 0,
-            max_qty: 1,
-            min_amount: 0,
-            max_amount: 99,
+            maxQty: 1,
+            minAmount: 0,
+            maxAmount: 99,
             qty: 1,
             total: 99,
           }
         ],
-        inclusion_total: 0,
-        deduction_total: 0,
-        addition_total: 99,
-        group_total: 99,
+        inclusionTotal: 0,
+        deductionTotal: 0,
+        additionTotal: 99,
+        groupTotal: 99,
         subtotal: 1615.75,
       },
     ],
     total: 1615.75, /* derived from last subtotal */
-    safe_percentage: 0.262345679, /* derived: 100 / 1620 * (1620 - 1615.75) */
+    savePercentage: 0.262345679, /* derived: 100 / 1620 * (1620 - 1615.75) */
     body: [],
     close: {
       complimentary: 'Beste Grüsse',

@@ -17,7 +17,7 @@ export const LineItem = {
   rate: 0,
   unit: '',
   subtotal: 0,
-  addition_groups: [AdditionGroup],
+  additionGroups: [AdditionGroup],
   total: 0,
 }
 
@@ -42,12 +42,12 @@ export default lineItems => ensureArray(lineItems).map(item => html`
     <td class="py-6 text-center">${item.rate}</td>
 
     <td class="py-6 pl-8">
-      ${notEmptyArray(item.addition_groups) ? html`
+      ${notEmptyArray(item.additionGroups) ? html`
         <div class="flex justify-between">
           <span class="text-brand">Subtotal</span>
           <span>${item.subtotal}</span>
         </div>
-        ${additionGroup(item.addition_groups)}
+        ${additionGroup(item.additionGroups)}
         <div class="flex justify-between font-medium">
           <span class="text-brand">Total</span>   
           <span class="flex-auto text-right">${item.total}</span>

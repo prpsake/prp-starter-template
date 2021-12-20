@@ -13,10 +13,10 @@ import { labelWeak } from './text'
 
 export const AdditionGroup = {
   items: [Addition],
-  inclusion_total: 0,
-  deduction_total: 0,
-  addition_total: 0,
-  group_total: 0,
+  inclusionTotal: 0,
+  deductionTotal: 0,
+  additionTotal: 0,
+  groupTotal: 0,
   subtotal: 0,
 }
 
@@ -24,10 +24,10 @@ export const AdditionGroup = {
 
 export const AdditionTotalGroup = {
   items: [AdditionTotal],
-  inclusion_total: 0,
-  deduction_total: 0,
-  addition_total: 0,
-  group_total: 0,
+  inclusionTotal: 0,
+  deductionTotal: 0,
+  additionTotal: 0,
+  groupTotal: 0,
   subtotal: 0,
 }
 

@@ -14,7 +14,7 @@ export const Address = {
   postcode: '',
   locality: '',
   street: '',
-  plot: '',
+  streetNumber: '',
   name: '',
   person: Person,
 }
@@ -33,9 +33,9 @@ export default (
 ) => ensureArray(addresses).map(item => html`
   <p>${item.name}</p>
   ${options.showPerson && html`
-    <p>${item.person.first_name} ${item.person.last_name}</p>
+    <p>${item.person.firstName} ${item.person.lastName}</p>
   `}
-  <p>${item.street} ${item.plot}</p>
+  <p>${item.street} ${item.streetNumber}</p>
   <p>${item.postcode} ${item.locality}</p>
   ${options.showEmail && html`
     <p class="underline">${item.person.email}</p>

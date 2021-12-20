@@ -14,7 +14,7 @@
     "address":{
       "country":{
         "name":"Schweiz",
-        "full_name":"Schweizerische Eidgenossenschaft",
+        "fullName":"Schweizerische Eidgenossenschaft",
         "code":"CH",
         "codes":[
           {
@@ -36,29 +36,29 @@
       },
       "region":{
         "name":"Zürich",
-        "full_name":"Zürich",
+        "fullName":"Zürich",
         "code":"ZH",
         "codes":[]
       },
       "postcode":"8152",
       "locality":"Opfikon",
       "street":"Grätzlistrasse",
-      "plot":"3",
+      "streetNumber":"3",
       "name":"Jérôme Imfeld",
       "person":{
         "uid":"1",
         "salutation":"Herr",
-        "first_name":"Jérôme",
-        "last_name":"Imfeld",
+        "firstName":"Jérôme",
+        "lastName":"Imfeld",
         "email":"j@zolo.dev",
         "mobile":"0796140319",
         "phone":""
       }
     },
-    "billing_address":{
+    "billingAddress":{
       "country":{
         "name":"Schweiz",
-        "full_name":"Schweizerische Eidgenossenschaft",
+        "fullName":"Schweizerische Eidgenossenschaft",
         "code":"CH",
         "codes":[
           {
@@ -80,29 +80,29 @@
       },
       "region":{
         "name":"Bern",
-        "full_name":"Bern",
+        "fullName":"Bern",
         "code":"BE",
         "codes":[]
       },
       "postcode":"3000",
       "locality":"Bern",
       "street":"Thunerstrasse",
-      "plot":"17a",
+      "streetNumber":"17a",
       "name":"Berner GmbH",
       "person":{
         "uid":"1",
         "salutation":"Herr",
-        "first_name":"Max",
-        "last_name":"Berner",
+        "firstName":"Max",
+        "lastName":"Berner",
         "email":"",
         "mobile":"",
         "phone":""
       }
     },
-    "shipping_address":{
+    "shippingAddress":{
       "country":{
         "name":"Schweiz",
-        "full_name":"Schweizerische Eidgenossenschaft",
+        "fullName":"Schweizerische Eidgenossenschaft",
         "code":"CH",
         "codes":[
           {
@@ -124,20 +124,20 @@
       },
       "region":{
         "name":"Bern",
-        "full_name":"Bern",
+        "fullName":"Bern",
         "code":"BE",
         "codes":[]
       },
       "postcode":"3000",
       "locality":"Bern",
       "street":"Thunerstrasse",
-      "plot":"17a",
+      "streetNumber":"17a",
       "name":"Berner GmbH",
       "person":{
         "uid":"1",
         "salutation":"Herr",
-        "first_name":"Max",
-        "last_name":"Berner",
+        "firstName":"Max",
+        "lastName":"Berner",
         "email":"",
         "mobile":"",
         "phone":""
@@ -148,12 +148,12 @@
       "locator":"https://zolo.dev"
     },
     "date":"10.07.21",
-    "due_date":"19.07.21",
+    "dueDate":"19.07.21",
     "iban":"CH83 0900 0000 8773 8635 0",
     "currency":{
       "name":"Franken",
-      "full_name":"Schweizer Franken",
-      "atomic_name":"Rappen",
+      "fullName":"Schweizer Franken",
+      "atomicName":"Rappen",
       "precision":2,
       "code":"CHF",
       "codes":[
@@ -169,7 +169,7 @@
         }
       ]
     },
-    "line_items":[
+    "lineItems":[
       {
         "title":"Bananas",
         "desc":"Yummie in my tummy.",
@@ -184,7 +184,7 @@
         "rate":90,
         "unit":"Std.",
         "subtotal":450,
-        "addition_groups":[
+        "additionGroups":[
           {
             "items":[
               {
@@ -195,17 +195,17 @@
                 "nth":"n",
                 "percentage":7.7,
                 "fixed":0,
-                "max_qty":1,
-                "min_amount":0,
-                "max_amount":false,
+                "maxQty":1,
+                "minAmount":0,
+                "maxAmount":false,
                 "qty":1,
                 "total":34.65
               }
             ],
-            "inclusion_total":34.65,
-            "deduction_total":0,
-            "addition_total":0,
-            "group_total":0,
+            "inclusionTotal":34.65,
+            "deductionTotal":0,
+            "additionTotal":0,
+            "groupTotal":0,
             "subtotal":450
           },
           {
@@ -218,17 +218,17 @@
                 "nth":"2",
                 "percentage":0,
                 "fixed":15,
-                "max_qty":4,
-                "min_amount":0,
-                "max_amount":60,
+                "maxQty":4,
+                "minAmount":0,
+                "maxAmount":60,
                 "qty":4,
                 "total":60
               }
             ],
-            "inclusion_total":0,
-            "deduction_total":60,
-            "addition_total":0,
-            "group_total":-60,
+            "inclusionTotal":0,
+            "deductionTotal":60,
+            "additionTotal":0,
+            "groupTotal":-60,
             "subtotal":390
           }
         ],
@@ -248,7 +248,7 @@
         "rate":90,
         "unit":"Std.",
         "subtotal":270,
-        "addition_groups":[
+        "additionGroups":[
           {
             "items":[
               {
@@ -259,17 +259,17 @@
                 "nth":"n",
                 "percentage":7.7,
                 "fixed":0,
-                "max_qty":1,
-                "min_amount":0,
-                "max_amount":false,
+                "maxQty":1,
+                "minAmount":0,
+                "maxAmount":false,
                 "qty":1,
                 "total":20.79
               }
             ],
-            "inclusion_total":20.79,
-            "deduction_total":0,
-            "addition_total":0,
-            "group_total":0,
+            "inclusionTotal":20.79,
+            "deductionTotal":0,
+            "additionTotal":0,
+            "groupTotal":0,
             "subtotal":270
           },
           {
@@ -282,17 +282,17 @@
                 "nth":"n",
                 "percentage":2.5,
                 "fixed":0,
-                "max_qty":1,
-                "min_amount":5,
-                "max_amount":10,
+                "maxQty":1,
+                "minAmount":5,
+                "maxAmount":10,
                 "qty":1,
                 "total":6.75
               }
             ],
-            "inclusion_total":0,
-            "deduction_total":0,
-            "addition_total":6.75,
-            "group_total":6.75,
+            "inclusionTotal":0,
+            "deductionTotal":0,
+            "additionTotal":6.75,
+            "groupTotal":6.75,
             "subtotal":276.75
           }
         ],
@@ -322,7 +322,7 @@
         "rate":90,
         "unit":"Std.",
         "subtotal":900,
-        "addition_groups":[
+        "additionGroups":[
           {
             "items":[
               {
@@ -333,17 +333,17 @@
                 "nth":"n",
                 "percentage":7.7,
                 "fixed":0,
-                "max_qty":1,
-                "min_amount":0,
-                "max_amount":false,
+                "maxQty":1,
+                "minAmount":0,
+                "maxAmount":false,
                 "qty":1,
                 "total":69.3
               }
             ],
-            "inclusion_total":69.3,
-            "deduction_total":0,
-            "addition_total":0,
-            "group_total":0,
+            "inclusionTotal":69.3,
+            "deductionTotal":0,
+            "additionTotal":0,
+            "groupTotal":0,
             "subtotal":900
           },
           {
@@ -356,17 +356,17 @@
                 "nth":"n",
                 "percentage":10,
                 "fixed":0,
-                "max_qty":1,
-                "min_amount":0,
-                "max_amount":50,
+                "maxQty":1,
+                "minAmount":0,
+                "maxAmount":50,
                 "qty":1,
                 "total":50
               }
             ],
-            "inclusion_total":0,
-            "deduction_total":50,
-            "addition_total":0,
-            "group_total":-50,
+            "inclusionTotal":0,
+            "deductionTotal":50,
+            "additionTotal":0,
+            "groupTotal":-50,
             "subtotal":850
           }
         ],
@@ -374,7 +374,7 @@
       }
     ],
     "subtotal":1620,
-    "line_item_addition_total_groups":[
+    "lineItemAdditionTotalGroups":[
       {
         "items":[
           {
@@ -384,10 +384,10 @@
             "total":124.74
           }
         ],
-        "inclusion_total":124.74,
-        "deduction_total":0,
-        "addition_total":0,
-        "group_total":0,
+        "inclusionTotal":124.74,
+        "deductionTotal":0,
+        "additionTotal":0,
+        "groupTotal":0,
         "subtotal":1620
       },
       {
@@ -411,14 +411,14 @@
             "total":6.75
           }
         ],
-        "inclusion_total":0,
-        "deduction_total":110,
-        "addition_total":6.75,
-        "group_total":-103.25,
+        "inclusionTotal":0,
+        "deductionTotal":110,
+        "additionTotal":6.75,
+        "groupTotal":-103.25,
         "subtotal":1516.75
       }
     ],
-    "addition_groups":[
+    "additionGroups":[
       {
         "items":[
           {
@@ -429,22 +429,22 @@
             "nth":"n",
             "percentage":10,
             "fixed":0,
-            "max_qty":1,
-            "min_amount":0,
-            "max_amount":99,
+            "maxQty":1,
+            "minAmount":0,
+            "maxAmount":99,
             "qty":1,
             "total":99
           }
         ],
-        "inclusion_total":0,
-        "deduction_total":0,
-        "addition_total":99,
-        "group_total":99,
+        "inclusionTotal":0,
+        "deductionTotal":0,
+        "additionTotal":99,
+        "groupTotal":99,
         "subtotal":1615.75
       }
     ],
     "total":1615.75,
-    "safe_percentage":0.262345679,
+    "savePercentage":0.262345679,
     "body":[],
     "close":{
       "complimentary":"Beste Grüsse",

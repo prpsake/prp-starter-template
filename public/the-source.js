@@ -12,6 +12,7 @@ import lineItem from "./types/line-item"
 import { textStrong, label, labelWeak } from "./types/text"
 
 
+
 import AQRBill from "@prpsake/prp-qr-bill"
 import { showWith, notShowWith } from "@prpsake/prp-qr-bill/Helpers"
 import * as Parser from "@prpsake/prp-qr-bill/Parser"
@@ -40,7 +41,7 @@ export default {
       
       <dt class="pb-8">${label('für')}</dt>
       <dd class="col-span-2 pb-8">
-        ${address(contents.billing_address, { showPerson: true })}
+        ${address(contents.billingAddress, { showPerson: true })}
       </dd>
 
       <dt>${label('betreffend')}</dt>
@@ -50,7 +51,7 @@ export default {
       <dd class="col-span-5">${contents.date}</dd>
       
       <dt>${label('fällig am')}</dt>
-      <dd class="col-span-5 font-medium">${textStrong(`${contents.due_date}, netto`)}</dd>
+      <dd class="col-span-5 font-medium">${textStrong(`${contents.dueDate}, netto`)}</dd>
 
       <dt>${label('IBAN')}</dt>
       <dd class="col-span-5">${contents.iban}</dd>
@@ -74,24 +75,24 @@ export default {
       </thead>
 
       <tbody class="align-top divide-y divide-brand divide-opacity-90">
-        ${lineItem(contents.line_items)}
+        ${lineItem(contents.lineItems)}
       </tbody>
 
       <tfoot class="break-inside-avoid">
         <tr class="align-top border-t border-brand border-opacity-90">
           <td class="pt-2 pb-4 pr-4" colspan="4">
-            <p class="oblique">Alle Preise in ${contents.currency.full_name}.</p>
+            <p class="oblique">Alle Preise in ${contents.currency.fullName}.</p>
           </td>
           <td class="pt-2 pb-4 pl-8">
-            ${( notEmptyArray(contents.line_item_addition_total_groups) || 
-                notEmptyArray(contents.addition_groups)
+            ${( notEmptyArray(contents.lineItemAdditionTotalGroups) || 
+                notEmptyArray(contents.additionGroups)
               ) && html`
               <div class="flex justify-between">
                 <span>${labelWeak('Subtotal')}</span>
                 <span>${contents.subtotal}</span>
               </div>
-              ${additionGroup(contents.line_item_addition_total_groups)}
-              ${additionGroup(contents.addition_groups)}
+              ${additionGroup(contents.lineItemAdditionTotalGroups)}
+              ${additionGroup(contents.additionGroups)}
             `}
             <div class="flex justify-between font-medium">
               <span>${label('Total')}</span>

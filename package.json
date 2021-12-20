@@ -29,7 +29,7 @@
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
-    "@prpsake/prp-qr-bill": "^3.0.1",
+    "@prpsake/prp-qr-bill": "^3.0.2",
     "hybrids": "^7.0.3"
   }
 }

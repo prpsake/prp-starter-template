@@ -4,7 +4,7 @@ import { Code } from './code'
 
 export const GeoItem = {
   name: '',
-  fullname: '',
+  fullName: '',
   code: '',
   codes: [Code],
 }

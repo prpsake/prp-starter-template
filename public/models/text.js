@@ -5,7 +5,7 @@ https://localazy.com/
 https://weblate.org/en-gb/
 */
 
-import { html } from 'hybrids'
+import { html } from "hybrids"
 
 
 

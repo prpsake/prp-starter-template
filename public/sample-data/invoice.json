@@ -3,6 +3,7 @@
   "mime":"application/pdf",
   "ext":".pdf",
   "filename":"rechnung-test-#0001",
+  "lang": "de",
   "template":{
     "name":"test",
     "type":"invoice",
@@ -149,7 +150,7 @@
     },
     "date":"10.07.21",
     "dueDate":"19.07.21",
-    "iban":"CH83 0900 0000 8773 8635 0",
+    "iban":"CH1509000000152034087",
     "currency":{
       "name":"Franken",
       "fullName":"Schweizer Franken",
@@ -449,6 +450,30 @@
     "close":{
       "complimentary":"Beste Grüsse",
       "signature":"Jérôme Imfeld"
+    },
+    "_": {
+      "qrBill": {
+        "lang": "de",
+        "currency": "CHF",
+        "amount": 1615.75,
+        "iban": "CH1509000000152034087",
+        "message": "Rechnung #02521",
+        "creditor": {
+          "name": "Jérôme Imfeld",
+          "street": "Grätzlistrasse",
+          "streetNumber": 3,
+          "locality": "8152 Opfikon",
+          "countryCode": "CH"
+        },
+        "debtor": {
+          "name": "Berner GmbH",
+          "street": "Thunerstrasse",
+          "streetNumber": "17a",
+          "postalCode": "3000",
+          "locality": "Bern",
+          "countryCode": "CH"
+        }
+      }
     }
   }
 }

@@ -1,21 +1,21 @@
-import { html } from 'hybrids'
-import { ensureArray } from '../helpers'
+import { html } from "hybrids"
+import { ensureArray } from "../helpers.js"
 
 
 
-import { GeoItem } from './geo-item'
-import { Person } from './person'
+import { GeoItem } from "./geo-item.js"
+import { Person } from "./person.js"
 
 
 
 export const Address = {
   country: GeoItem,
   region: GeoItem,
-  postcode: '',
-  locality: '',
-  street: '',
-  streetNumber: '',
-  name: '',
+  postcode: "",
+  locality: "",
+  street: "",
+  streetNumber: "",
+  name: "",
   person: Person,
 }
 

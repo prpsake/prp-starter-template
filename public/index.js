@@ -1,17 +1,17 @@
-import { store, html, define, parent } from 'hybrids'
-import { Previewer } from './lib/paged.esm.js'
+import { store, html, define, parent } from "hybrids"
+import { Previewer } from "./lib/paged.esm.js"
 
 
 
 /* Models */
 
-import Model from './models/invoice'
+import Invoice from "./models/invoice.js"
 
 
 
 /* Elements */
 
-import TheSource from './the-source.js'
+import TheSource from "./the-source.js"
 
 
 
@@ -27,10 +27,10 @@ const paginate =
 /* Elements */
 
 const TheApp = {
-  tag: 'the-app',
-  data: store(Model),
+  tag: "the-app",
+  data: store(Invoice),
   readyPreview: false,
-  source: ({ content }) => content().querySelector('the-source'),
+  source: ({ content }) => content().querySelector("the-source"),
   content: ({ data, readyPreview }) => html`
 
     ${store.pending(data) && html`
@@ -50,7 +50,7 @@ const TheApp = {
 
 
 const ThePreview = {
-  tag: 'the-preview',
+  tag: "the-preview",
   app: parent(TheApp),
   content: h => html`
 

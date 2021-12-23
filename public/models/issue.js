@@ -1,12 +1,12 @@
-import { html } from 'hybrids'
-import { mapx, ensureArray } from '../helpers'
+import { html } from "hybrids"
+import { mapx, ensureArray } from "../helpers.js"
 
 
 
 export const Issue = {
-  uid: '',
-  title: '',
-  locator: '',
+  uid: "",
+  title: "",
+  locator: "",
 }
 
 

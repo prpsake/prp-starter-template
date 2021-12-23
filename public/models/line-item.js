@@ -1,21 +1,21 @@
-import { html } from 'hybrids'
-import { ensureArray, notEmptyArray } from '../helpers'
+import { html } from "hybrids"
+import { ensureArray, notEmptyArray } from "../helpers.js"
 
 
 
-import issue, { Issue } from './issue'
-import additionGroup, { AdditionGroup } from './addition-group'
+import issue, { Issue } from "./issue.js"
+import additionGroup, { AdditionGroup } from "./addition-group.js"
 
 
 
 export const LineItem = { 
-  uid: '',
-  title: '',
-  desc: '',
+  uid: "",
+  title: "",
+  desc: "",
   issues: [Issue],
   qty: 0,
   rate: 0,
-  unit: '',
+  unit: "",
   subtotal: 0,
   additionGroups: [AdditionGroup],
   total: 0,

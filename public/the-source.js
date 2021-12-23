@@ -1,23 +1,17 @@
 import { define, html } from "hybrids"
-import { notEmptyArray } from "./helpers"
+import { notEmptyArray } from "./helpers.js"
 
 
 
-import address from "./types/address"
-import additionGroup from "./types/addition-group"
-import lineItem from "./types/line-item"
-
-
-
-import { textStrong, label, labelWeak } from "./types/text"
+import address from "./models/address.js"
+import additionGroup from "./models/addition-group.js"
+import lineItem from "./models/line-item.js"
+import { textStrong, label, labelWeak } from "./models/text.js"
 
 
 
 import AQRBill from "@prpsake/prp-qr-bill"
 import { showWith, notShowWith } from "@prpsake/prp-qr-bill/Helpers"
-import * as Parser from "@prpsake/prp-qr-bill/Parser"
-import * as Validator from "@prpsake/prp-qr-bill/Validator"
-import * as Data from "@prpsake/prp-qr-bill/Data"
 import * as Formatter from "@prpsake/prp-qr-bill/Formatter"
 
 
@@ -113,32 +107,32 @@ export default {
         <h2 class="mt-8 mb-28 font-doc-sans-heading text-3xl text-brand">
           Zahlungsmethoden
         </h2>
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 hidden">
           <img class="block col-span-3 mb-28" src="/assets/img/twint-qr-code-free-amount.svg">
           <div class="col-span-6 mb-28"></div>
           <img class="block col-span-3" src="/assets/img/paypal-qr-code-free-amount.svg">
         </div>
       </div>
       <a-qr-bill
-        lang=${"de"}
-        currency=${contents.currency.code}
-        amount=${Formatter.moneyFromNumberStr2(String(contents.total))}
-        iban=${Formatter.blockStr4(contents.iban)}
-        reference=${""}
-        message=${""}
-        messageCode=${""}
-        creditorName=${contents.address.name}
-        creditorAddressLine1=${contents.address.street}
-        creditorAddressLine2=${contents.address.locality}
-        debtorName=${""}
-        debtorAddressLine1=${""}
-        debtorAddressLine2=${""}
-        qrCodeString=${""}
-        showQRCode=${false}
-        showAmount=${true}
-        showReference=${false}
-        showDebtor=${false}
-        showAdditionalInfo=${false}
+        lang=${contents._.qrBill.lang}
+        currency=${contents._.qrBill.currency}
+        amount=${Formatter.moneyFromNumberStr2(contents._.qrBill.amount)}
+        iban=${Formatter.blockStr4(contents._.qrBill.iban)}
+        reference=${contents._.qrBill.reference}
+        message=${contents._.qrBill.message}
+        messageCode=${contents._.qrBill.messageCode}
+        creditorName=${contents._.qrBill.creditorName}
+        creditorAddressLine1=${contents._.qrBill.creditorAddressLine1}
+        creditorAddressLine2=${contents._.qrBill.creditorAddressLine2}
+        debtorName=${contents._.qrBill.debtorName}
+        debtorAddressLine1=${contents._.qrBill.debtorAddressLine1}
+        debtorAddressLine2=${contents._.qrBill.debtorAddressLine2}
+        qrCodeString=${contents._.qrBill.qrCodeString}
+        showQRCode=${notShowWith(contents._.qrBill, { qrCodeString: [""] })}
+        showAmount=${notShowWith(contents._.qrBill, { amount: [""] })}
+        showReference=${showWith(contents._.qrBill, { referenceType: ["QRR", "SCOR"] })}
+        showDebtor=${notShowWith(contents._.qrBill, { debtorName: [""], debtorAddressLine1: [""], debtorAddressLine2: [""] })}
+        showAdditionalInfo=${notShowWith(contents._.qrBill, { message: [""], messageCode: [""] })}
         reduceContent=${false}>
       </a-qr-bill>
     </div>

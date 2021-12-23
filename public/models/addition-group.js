@@ -1,13 +1,13 @@
-import { html } from 'hybrids'
-import { ensureArray } from '../helpers'
+import { html } from "hybrids"
+import { ensureArray } from "../helpers.js"
 
 
-import { Addition } from './addition'
-import { AdditionTotal } from './addition-total'
+import { Addition } from "./addition.js"
+import { AdditionTotal } from "./addition-total"
 
 
 
-import { labelWeak } from './text'
+import { labelWeak } from "./text.js"
 
 
 
@@ -37,15 +37,15 @@ export default groups => ensureArray(groups).map(group => html`
   <dl>
     ${group.items.map((
       item, _i, _arr, 
-      isInclusion = item.type === 'inclusion', 
-      isDeduction = item.type === 'deduction',
-      isAddition = item.type === 'addition'
+      isInclusion = item.type === "inclusion", 
+      isDeduction = item.type === "deduction",
+      isAddition = item.type === "addition"
     
     ) => html`
       <div class=${{
-        'flex': true,
-        'justify-between': true,
-        'oblique': isInclusion
+        "flex": true,
+        "justify-between": true,
+        "oblique": isInclusion
       }}>
         ${isInclusion && html`
           <dt>${item.title}&nbsp;inkl.</dt>

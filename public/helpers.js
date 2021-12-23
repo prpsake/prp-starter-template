@@ -1,8 +1,8 @@
 export const ensureArray = 
   x => 
   Array.isArray(x) ? 
-  x.filter(x => (typeof x === 'number') || x) : 
-  [x].filter(x => (typeof x === 'number') || x)
+  x.filter(x => (typeof x === "number") || x) : 
+  [x].filter(x => (typeof x === "number") || x)
 
 
 

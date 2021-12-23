@@ -1,6 +1,6 @@
 export const AdditionTotal = {
-  ruid: '',
-  type: '',
-  title: '',
+  ruid: "",
+  type: "",
+  title: "",
   total: 0
 }
